@@ -5,11 +5,12 @@ description: Use before movement and at each procedure transition to execute and
 
 # Boeing 737 checklist execution
 
-1. Use `list_checklist_categories` and `read_checklist` to obtain the live category, sections, item identifiers, conditions, and expected responses. Read each section when its procedure becomes applicable. Use the tools' current schema to establish the active section if required; do not assume section transitions are automatic.
+1. Use `list_checklist_categories` and `read_checklist` to obtain the live category, all its sections, item identifiers, conditions, and expected responses. Brief every upcoming takeoff section while stopped; finishing the first section does not finish the category. Read each section again when its procedure becomes applicable, and use the current schema to establish the active section if required; do not assume section transitions are automatic.
 2. Use the default authenticated context unless the tool requires an explicitly supplied identifier. Never invent user or run identifiers. On an access failure, retry with the supported default context; if still blocked, report the issue and continue the physical procedure safely without claiming recorded completion.
 3. For each item: establish its stated condition, perform or verify the action, read the relevant aircraft indications, then call `mark_checklist` with the live identifiers and required response. Reading a procedure or changing a switch does not record completion.
 4. Verify that the mark is accepted and that checklist progress changes. Acceptance records your assertion; it does not supply missing aircraft evidence. Before leaving a section, read it back and resolve unmarked applicable items. Do not mark future, unverified, or failed actions complete; a historical trigger must have been observed, not inferred from the present state.
-5. Prepare the upcoming airborne items while stopped. During rotation or recovery, aircraft control takes priority; retain the verified evidence and record it at the next safe opportunity without leaving a sustained control input unattended.
+5. Keep a pending-item list by live section and item identifier: not due, due but unverified, verified but unmarked, or marked. During rotation or recovery, aircraft control takes priority; retain the observed trigger and aircraft evidence, then record verified items at the next stable opportunity without leaving a sustained control input unattended.
+6. At stable positive climb, scheduled cleanup, and verified autoflight handoff, re-read category progress and resume the pending items before steady level flight. A short scenario may stop soon after altitude capture; do not postpone every airborne section until after reaching the goal. A later safe state cannot prove a missed VR, positive-climb, or other historical trigger; leave unsupported items unmarked and report limitations.
 
 ## Takeoff conditions to preserve
 
