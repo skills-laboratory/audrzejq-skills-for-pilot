@@ -5,6 +5,13 @@ description: Use after liftoff for stable climb, scheduled flap retraction, low-
 
 # Boeing 737 climb
 
+## Plan the normal departure while stopped
+
+- Published departure, noise-abatement, obstacle, and operator requirements take precedence. For a normal all-engines-operating departure without a different specified profile, set MCP speed to confirmed V2 and target V2 + 20 kt after liftoff. Use the assigned/programmed acceleration height; if none is specified, the normal profile here uses 1000 ft above departure field elevation. Establish that MSL altitude from field elevation and the correct altimeter setting, not terrain height AGL. The 400-ft roll-mode/checklist trigger is not itself acceleration permission. Resolve conflicting or unclear departure restrictions before takeoff.
+- For a flaps-5 takeoff, plan the retraction sequence 5 → 1 → UP. Prefer the weight-dependent PFD/FMC maneuver speeds. If direct maneuver-speed readings are absent, use supported CDU controls and read `fmc-cdu` to obtain the FMC APPROACH REF flaps-40 VREF for the current gross weight; verify its displayed weight against `takeoff-data.gross-weight`. This is a reference-speed read, not a landing-configuration command or a change to the takeoff MCP speed.
+- With a verified current-weight VREF40, the normal 737-800 maneuver-speed references are: flaps 5 = VREF40 + 40 kt, flaps 1 = VREF40 + 60 kt, flaps UP = VREF40 + 80 kt. At acceleration height and with increasing IAS, select flaps 1 at or above the flaps-5 reference, then UP at or above the flaps-1 reference; continue accelerating toward the UP reference. These are minimum maneuver references, not maximum flap-extended speeds: stay within the actual configuration's placard limit and departure speed limits. Do not apply this sequence to a different takeoff flap setting.
+- Verify the reference values and the supported flap-detent controls before releasing the brakes. V1, VR, and V2 alone do not supply VREF40 or a flap-retraction schedule. If neither maneuver speeds nor current-weight VREF40 can be read, remain stopped and report the missing data; do not invent speeds or claim cleanup. An unreadable manual page is a documentation issue, not permission to bypass prerequisites.
+
 ## Stabilize before secondary tasks
 
 - Maintain the departure track and procedure's initial climb speed with appropriate thrust and small pitch corrections. IAS falling with rising pitch calls for reduced pitch, not a larger sustained nose-up input to chase vertical speed.
@@ -14,7 +21,7 @@ description: Use after liftoff for stable climb, scheduled flap retraction, low-
 ## Accelerate and clean up
 
 - Above 400 ft using the procedure's stated altitude datum, select or verify the permitted roll mode. Use LNAV only with a valid active route and confirmed FMA; otherwise use the documented departure roll-mode branch.
-- At the assigned acceleration/retraction conditions, lower pitch enough to accelerate using the bounded corrections above, then remove the nose-down correction and verify the new attitude is holding before cleanup. After any nose-up correction, likewise arrest rising pitch before a flap or mode call; a smaller positive ratio is not a stabilized climb. Retract flaps one scheduled detent at a time using the weight-dependent FMC/PFD maneuver-speed schedule. Verify actual flap/slat movement and recheck pitch trend, IAS, and positive climb after each selection before the next secondary task. Do not use height alone or a falling IAS as permission to retract.
+- At the planned acceleration/retraction conditions, lower pitch enough to accelerate using the bounded corrections above, then remove the nose-down correction and verify the new attitude is holding before cleanup. After any nose-up correction, likewise arrest rising pitch before a flap or mode call; a smaller positive ratio is not a stabilized climb. Retract flaps using the prebriefed weight-dependent schedule, including the normal flaps-5 branch above when applicable. Verify actual flap/slat movement and recheck pitch trend, IAS, and positive climb after each selection before the next secondary task. Do not use height alone or a falling IAS as permission to retract.
 - After actual flap/slat retraction, execute the remaining takeoff checks: prescribed VNAV mode, autopilot as needed, engine start switches as required, autobrake OFF, and gear lever OFF. Keep the assigned MCP altitude limit in place and mark only verified items.
 
 ## Verify the autoflight handoff
