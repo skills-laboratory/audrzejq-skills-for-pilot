@@ -14,8 +14,8 @@ description: Use before movement and at each procedure transition to execute and
 ## Takeoff conditions to preserve
 
 - Before runway entry, verify actual runway identity and runway-entry authority. In a runway-loaded scenario, verify the initial runway and the scenario's stated authority rather than inventing a prior clearance.
-- At entry, verify the required strobe/other lights and both transponder code and mode. After takeoff authority, verify the required fixed landing lights and approximately 40% N1 on both engines.
-- After engine stabilization, verify TO/GA outcome; at the applicable VR, verify rotation toward 15°; at positive climb, verify gear retraction.
+- At entry, verify the required strobe/other lights and both transponder code and mode. After takeoff authority, verify the required fixed landing lights. Mark the approximately 40% N1 item only after both measured engine N1 readings stabilize near that value, not from a 40% lever command or engine symmetry.
+- After engine stabilization, actually push TO/GA and verify the required thrust/mode outcome before marking it; never mark a planned button press in advance. Resolve missing prerequisites using `737-takeoff`. At the applicable VR, verify rotation toward 15°; at positive climb, verify gear retraction.
 - Above the procedure's stated 400 ft datum, verify the permitted roll mode and scheduled flap retraction. Height alone does not establish safe flap-retraction speed.
 - Only after actual flap/slat retraction, complete the prescribed VNAV selection, autopilot decision, engine start-switch positions, autobrake OFF, and gear-lever OFF checks. Verify actual modes and configuration, not just switch commands.
 - For gear-lever OFF, retracted gear and a handle-not-down indication do not distinguish UP from OFF. Require evidence that distinguishes the OFF detent. If the selection remains unverified and no such indication is available, leave that item unmarked and report the limitation while continuing safe flight; reporting it does not justify marking it complete.
