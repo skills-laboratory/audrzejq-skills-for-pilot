@@ -1,0 +1,21 @@
+---
+name: 737-go-around
+description: Use when an approach cannot continue safely to establish a controlled Boeing 737-800 go-around, follow the published missed approach, and plan a valid re-intercept.
+---
+
+# Boeing 737 go-around and missed approach
+
+## Control the aircraft before re-planning
+
+1. Initiate a go-around for an unrecoverable intercept, unstable approach, failed required landing modes/configuration, or missing required visual references at minimums. Use the aircraft go-around procedure and selected chart already briefed during `737-approach`; do not begin documentation searches while attitude or IAS is unsafe.
+2. Command TO/GA as prescribed and verify thrust increase, active go-around FMA, and actual CMD state immediately. TO/GA can disconnect the autopilot; flight-director guidance alone does not move the aircraft. If CMD is lost, take manual control using the documented override while monitoring pitch, bank, IAS, height, and vertical-speed trend.
+3. Follow valid go-around guidance with appropriate thrust and smooth pitch toward the procedure's initial attitude, normally about 15 degrees when IAS/configuration permit. Start with the smallest effective sustained input, read its rate immediately, and neutralize before tool latency would carry pitch or bank beyond the target. A smaller positive ratio still raises the nose; neutral is not an attitude lock. Use brief small counter-corrections to arrest the trend rather than alternating large ratios or trimming an unstable response.
+4. Maintain the required track and safe IAS; do not chase climb rate. If pitch rises while IAS approaches the configuration's minimum speed, reduce pitch/unload promptly with wings approximately level and appropriate available thrust, using the recovery guidance in `737-climb`. Do not start a turn, search documents, or engage CMD as a shortcut out of unsafe attitude/speed.
+5. Set the procedure's go-around flaps, normally 15 from landing flaps, and ensure speedbrakes are retracted. Retract gear only after verified positive climb. If gear is already UP, do not cycle it. Follow charted turn conditions and altitude restrictions; do not assume a selected MCP altitude alone limits the climb.
+
+## Capture the missed-approach altitude and re-intercept safely
+
+- Once IAS, attitude, and climb are stable, use `737-climb` for the permitted roll mode, speed-scheduled flap cleanup, and autoflight handoff. Explicitly zero both pitch-control and roll-control and turn joystick-override OFF if ON before CMD; verify actual modes, targets, and successive flight-path reads. Re-read targets after mode activation to catch synchronized speed or V/S values.
+- Follow the published missed-approach track and altitude, including the proper distance reference and turn restrictions. Use `737-altitude-hold` early enough to capture without overshoot. Do not invent an FMC route or raise the assigned target to accommodate uncontrolled climbing.
+- Re-plan only after stable control is established. A new intercept must return to the approach side of the intended runway with the published inbound course, valid guidance, a safe below-glidepath intercept altitude, and enough distance for setup/configuration. Do not descend toward the airport on the reciprocal course using the original runway's ILS.
+- Recheck remaining fuel, performance data, radios, minimums, configuration, and live checklist sections before another approach. Return to `737-approach`; if valid guidance or necessary controls remain unavailable, report the limitation and maintain a safe flight path rather than fabricating a landing.
