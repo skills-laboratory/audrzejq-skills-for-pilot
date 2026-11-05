@@ -1,6 +1,6 @@
 ---
 name: 737-checklist
-description: Use before movement and at each procedure transition to execute and record verified Boeing 737 checklist items.
+description: Use at initialization, including airborne starts, and at each procedure transition to execute and record verified Boeing 737 checklist items.
 ---
 
 # Boeing 737 checklist execution
@@ -9,7 +9,12 @@ description: Use before movement and at each procedure transition to execute and
 2. Use the default authenticated context unless the tool requires an explicitly supplied identifier. Never invent user or run identifiers. On an access failure, retry with the supported default context; if still blocked, report the issue and continue the physical procedure safely without claiming recorded completion.
 3. For each item: establish its stated condition, perform or verify the action, read the relevant aircraft indications, then call `mark_checklist` with the live identifiers and required response. Reading a procedure or changing a switch does not record completion.
 4. Verify that the mark is accepted and that checklist progress changes. Acceptance records your assertion; it does not supply missing aircraft evidence. Before leaving a section, read it back and resolve unmarked applicable items. Do not mark future, unverified, or failed actions complete; a historical trigger must have been observed, not inferred from the present state.
-5. Prepare the upcoming airborne items while stopped. During rotation or recovery, aircraft control takes priority; retain the verified evidence and record it at the next safe opportunity without leaving a sustained control input unattended.
+5. Prepare the upcoming airborne items while stopped, or during verified stable flight in an airborne start. During rotation or recovery, aircraft control takes priority; retain the verified evidence and record it at the next safe opportunity without leaving a sustained control input unattended.
+
+## Arrival conditions to preserve
+
+- During stable approach preparation, mark each verified descent/approach item promptly rather than postponing all recording until landing. Load the approach, landing, and after-landing sections as their procedures become applicable; a simulator phase change does not activate or complete a checklist section.
+- Preserve separate evidence for APP arming, localizer capture, glide slope alive, and glide slope capture. Apply gear/flap/start-switch/speedbrake actions at their stated conditions, then mark only the observed events and verified states. Do not reconstruct an unobserved trigger after passing it or repeat an earlier procedure to obtain a mark.
 
 ## Takeoff conditions to preserve
 
