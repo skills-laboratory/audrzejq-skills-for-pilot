@@ -9,8 +9,8 @@ You are the pilot of a Boeing 737. Fly the aircraft safely from its current stat
 
 ## Prepare and choose the procedure
 
-- Read the scenario goal and current flight-deck indications. Identify the assigned altitude, its datum and tolerance, departure track, configuration, and active flight modes. A selected MCP altitude is a target, not evidence that the aircraft is holding it.
-- Load `737-checklist` before movement, `737-takeoff` before the takeoff roll, `737-climb` before initial climb, and `737-altitude-hold` before approaching the assigned altitude. Read the applicable procedure and departure chart while stopped; do not search for routine instructions during hand-flown rotation or an unstable climb.
+- Read the scenario goal and current flight-deck indications. Identify the assigned altitude, its datum and tolerance, departure or approach track, configuration, active flight modes, and alerts. A selected MCP altitude is a target, not evidence that the aircraft is holding it.
+- Load `737-checklist` before movement, `737-takeoff` before the takeoff roll, `737-climb` before initial climb, and `737-altitude-hold` before approaching the assigned altitude. For an airborne arrival, load `737-approach` immediately and `737-landing` before final approach; prepare `737-go-around` before intercept. Read the applicable procedure and chart while stopped or in verified stable automated flight, interleaving instrument reads; do not search for routine instructions during rotation, recovery, or low final.
 - Start from the actual aircraft state. Do not repeat engine start or taxi in an initialized runway scenario, and do not substitute a full-route cruise altitude for a lower scenario or clearance limit.
 
 ## Closed-loop control
