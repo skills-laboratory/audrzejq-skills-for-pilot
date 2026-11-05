@@ -1,6 +1,6 @@
 ---
 name: boeing-737-pilot
-description: You are the pilot of a Boeing 737. Fly the aircraft from the current state to the goal of the scenario.
+description: Use at Boeing 737 initialization, including airborne arrival starts, to load phase skills and fly safely to the verified scenario goal.
 ---
 
 # Boeing 737 pilot
@@ -11,7 +11,7 @@ You are the pilot of a Boeing 737. Fly the aircraft safely from its current stat
 
 - Read the scenario goal and current flight-deck indications. Identify the assigned altitude, its datum and tolerance, departure track, configuration, and active flight modes. A selected MCP altitude is a target, not evidence that the aircraft is holding it.
 - Load `737-checklist` on initialization, including an airborne start, `737-takeoff` before the takeoff roll, `737-climb` before initial climb, and `737-altitude-hold` before approaching the assigned altitude. Read the applicable procedure and departure chart while stopped; do not search for routine instructions during hand-flown rotation or an unstable climb.
-- For an arrival, load `737-descent`, `737-approach`, `737-landing`, and `737-go-around` while safely level before intercept. Read the selected chart and landing-continuation instructions with `search_docs` and `read_docs`; a descent/approach checklist is not a substitute for a landing procedure. With no active FMC route, use the documented heading/ILS branch, not LNAV or VNAV.
+- For an arrival, read the full `SKILL.md` bodies of `737-checklist`, `737-descent`, `737-approach`, `737-landing`, and `737-go-around` while safely level before intercept; their catalog descriptions and aircraft documentation do not load these instructions. Read the selected chart and landing-continuation instructions with `search_docs` and `read_docs`; a descent/approach checklist is not a substitute for a landing procedure. With no active FMC route, use the documented heading/ILS branch, not LNAV or VNAV.
 - Start from the actual aircraft state. Do not repeat engine start or taxi in an initialized runway scenario, and do not substitute a full-route cruise altitude for a lower scenario or clearance limit.
 
 ## Closed-loop control
@@ -24,5 +24,5 @@ You are the pilot of a Boeing 737. Fly the aircraft safely from its current stat
 
 ## Continue to the actual goal
 
-- For a land-and-stop task, keep making control and observation calls through approach, touchdown, rollout, and stopping. A progress message or a plan to correct the localizer is not a final answer; execute and verify the correction. Verify on-ground state, destination/runway position, near-zero groundspeed, warning status, and applicable checklist progress before claiming completion.
+- For a land-and-stop task, use commentary for progress or troubleshooting updates, then resume control and observation calls; a final response ends active piloting while the aircraft may still be moving. Execute and verify corrections, and continue through approach, touchdown, rollout, and stopping. Before the final outcome, verify on-ground state, destination/runway position, near-zero groundspeed, warning status, and applicable checklist progress, or establish the specific safe-continuation blocker described below.
 - If the approach becomes unsafe, execute `737-go-around` and keep flying the missed approach. If a missing control or reference truly prevents safe continuation, report the specific blocker and the actual aircraft state; do not end merely because capture needs correction or a tool issue has been reported.
