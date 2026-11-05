@@ -9,7 +9,14 @@ description: Use before movement and at each procedure transition to execute and
 2. Use the default authenticated context unless the tool requires an explicitly supplied identifier. Never invent user or run identifiers. On an access failure, retry with the supported default context; if still blocked, report the issue and continue the physical procedure safely without claiming recorded completion.
 3. For each item: establish its stated condition, perform or verify the action, read the relevant aircraft indications, then call `mark_checklist` with the live identifiers and required response. Reading a procedure or changing a switch does not record completion.
 4. Verify that the mark is accepted and that checklist progress changes. Acceptance records your assertion; it does not supply missing aircraft evidence. Before leaving a section, read it back and resolve unmarked applicable items. Do not mark future, unverified, or failed actions complete; a historical trigger must have been observed, not inferred from the present state.
-5. Prepare the upcoming airborne items while stopped. During rotation or recovery, aircraft control takes priority; retain the verified evidence and record it at the next safe opportunity without leaving a sustained control input unattended.
+5. Prepare the upcoming airborne items while stopped, or in verified stable flight when starting airborne. During rotation or recovery, aircraft control takes priority; retain the verified evidence and record it at the next safe opportunity without leaving a sustained control input unattended.
+
+## Arrival conditions to preserve
+
+- Read and establish the descent, approach, both parts of the landing procedure, and after-landing sections as they become applicable. Mark verified items during stable flight rather than deferring all recording until touchdown. One blocked item does not prevent completing independent, verified items; leave the blocked item unmarked and report it.
+- For descent, verify landing pressurization altitude, annunciator recall, accepted weight/flap-dependent VREF, minimums, identified navigation radios and autobrake as specified. For approach, verify passenger signs, altimeter and the applicable lights/RNP conditions. Do not treat a temporary flaps-15 approach setting as authority for the conditional flaps-15 landing inhibit.
+- APP arming, active localizer capture, valid glide slope alive, and active G/S capture are different evidence. Mark each only when observed. At glide slope alive, verify gear DOWN and three independent safe indications, flaps 15, both start switches CONT, speedbrake ARM and its separate ARMED lamp. At G/S capture, verify the directed landing flaps and published missed-approach altitude.
+- Preserve the source's altitude and event conditions. Do not invent a historical transition or mark a conditional item solely because its switch is now set; report conditions that the initialized scenario never supplied. Never fill landing or after-landing progress from an off-runway impact or an automatic arrived label.
 
 ## Takeoff conditions to preserve
 
